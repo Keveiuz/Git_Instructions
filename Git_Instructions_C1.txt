@@ -1,3 +1,5 @@
+Chapter 1: 对已经在repo里的文件的下载，修改，同步与上传
+
 #1 确定下载库的本地路径 git clone + URL
    jason@Jason-MacBook-Pro Desktop % git clone https://github.com/Keveiuz/Text.git
    Cloning into 'Text'...
