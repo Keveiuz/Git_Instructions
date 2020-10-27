@@ -1,0 +1,59 @@
+#1 确定下载库的本地路径 git clone + URL
+   jason@Jason-MacBook-Pro Desktop % git clone https://github.com/Keveiuz/Text.git
+   Cloning into 'Text'...
+   remote: Enumerating objects: 9, done.
+   remote: Counting objects: 100% (9/9), done.
+   remote: Compressing objects: 100% (5/5), done.
+   remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+   Unpacking objects: 100% (9/9), done.
+
+#2 查看库的状态 git status 
+   jason@Jason-MacBook-Pro Desktop % git status
+   fatal: not a git repository (or any of the parent directories): .git //路径不在库所在的路径下，报错
+
+   jason@Jason-MacBook-Pro Desktop % cd Text 
+   jason@Jason-MacBook-Pro Text % ls
+   README.md	text1
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is up to date with 'origin/main'.
+   nothing to commit, working tree clean
+
+#3 修改后再次查看库的状态，显示有变动的文件
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is up to date with 'origin/main'.
+
+   Changes not staged for commit:
+     (use "git add <file>..." to update what will be committed)
+     (use "git restore <file>..." to discard changes in working directory)
+	   modified:   text1                                                        <- 此处表示有变动
+
+   no changes added to commit (use "git add" and/or "git commit -a")
+
+#4 用commit确认修改并且追加commit，必须追加message，否则会跳入VIM.  git commit -a -m "..."
+   jason@Jason-MacBook-Pro Text % git commit -a -m "Adding Return"
+   [main 0aef9e7] Adding Return
+    1 file changed, 5 insertions(+)
+
+#5 查看现在库的状态，显示已经没有变动的文件
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is ahead of 'origin/main' by 1 commit.
+     (use "git push" to publish your local commits)
+
+   nothing to commit, working tree clean
+
+#6 将本地修改后的文件push到网页 git push
+   jason@Jason-MacBook-Pro Text % git push
+   Enumerating objects: 5, done.
+   Counting objects: 100% (5/5), done.
+   Delta compression using up to 8 threads
+   Compressing objects: 100% (3/3), done.
+   Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+   Total 3 (delta 1), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+   To https://github.com/Keveiuz/Text.git
+      d8c564c..0aef9e7  main -> main
+
+#7 打开网页查询对应的库，显示同步修改完成。
