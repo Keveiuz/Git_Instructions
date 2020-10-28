@@ -59,3 +59,13 @@ Chapter 1: 对已经在repo里的文件的下载，修改，同步与上传
       d8c564c..0aef9e7  main -> main
 
 #7 打开网页查询对应的库，显示同步修改完成。
+
+///常用指令: 
+           1.git clone + URL(http://…从网站复制)    在本地下载repo
+           2.git status    当在本地已下载的库目录下，可以用此命令 查看repo的状态   
+           3.git commit -a -m “…”    保存更改，-a 表示保存目录下的所有更改，-m 表示网页里的commit , “…” 表示commit的内容。    
+           4.git config - -list  显示该目录在网页里对应的用户，邮箱
+           5.git log (-n) 显示最近n条更改记录，若不输入n，显示一天的更改记录
+           6.git remote   查看本地目录下的库在网页中的repo名称，该名称可以用作push的地址
+           7.git remote -v  查看URL 
+           8.git push Remote Branch (Remote为库名称，Branch为分枝名称）
