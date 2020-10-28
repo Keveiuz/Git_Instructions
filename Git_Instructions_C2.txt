@@ -1,0 +1,59 @@
+Chapter 2: 将本地在repo里新建的文件上传到网页
+
+#1 在本地完成新建文件后，查看git状态   git status
+   Untracked files:
+     (use "git add <file>..." to include in what will be committed)
+	   Git_Instructions_C2.txt                                           <- 发现未被追踪到到文件，即新建的文件
+
+   nothing added to commit but untracked files present (use "git add" to track)
+
+#2 新建文件 git add + FileName , 之后查看状态
+   jason@Jason-MacBook-Pro Text % git add Git_Instructions_C2.txt        // 新建文件的文件名建议复制粘贴
+
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is up to date with 'origin/main'.
+
+   Changes to be committed:
+     (use "git restore --staged <file>..." to unstage)
+	   new file:   Git_Instructions_C2.txt                               <- 发现新文件
+
+#3 确认新建文件，并追加comment   git commit -m "..."
+   jason@Jason-MacBook-Pro Text % git commit -m "There is a Git Instruction, Please carefully save it"
+   [main 28f31ac] There is a Git Instruction, Please carefully save it
+    1 file changed, 0 insertions(+), 0 deletions(-)
+    create mode 100644 Git_Instructions_C2.txt                           <- 文件本地新建完成
+
+#4 查看repo此时的状态
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is ahead of 'origin/main' by 1 commit.
+     (use "git push" to publish your local commits)                      <- 检测到有本地文件未上传
+
+   nothing to commit, working tree clean
+
+#5 查看本地文件在GitHub上对应的remote名   git remote
+   jason@Jason-MacBook-Pro Text % git remote
+   origin                                                                <- 名称为origin
+
+#6 确认修改后上传到GitHub   git push
+   Enumerating objects: 7, done.
+   Counting objects: 100% (7/7), done.
+   Delta compression using up to 8 threads
+   Compressing objects: 100% (6/6), done.
+   Writing objects: 100% (6/6), 1.74 KiB | 1.74 MiB/s, done.
+   Total 6 (delta 1), reused 0 (delta 0)
+   remote: Resolving deltas: 100% (1/1), done.
+   To https://github.com/Keveiuz/Text.git
+      0aef9e7..3cdbe37  main -> main                
+
+#7 检查目录，已经没有需要上传到新文件
+   jason@Jason-MacBook-Pro Text % git status
+   On branch main
+   Your branch is up to date with 'origin/main'.
+
+
+
+
+
+
